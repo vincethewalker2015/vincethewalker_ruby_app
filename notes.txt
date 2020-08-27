@@ -1,0 +1,23 @@
+Was looking for a simplified way to pull the data from webserver log
+
+1. 'Git commit 263337c290096017aa9c78844dad12c7431e9ba2'
+Set up Pathway to pull data from webserver log
+
+Using initialize here allowed me to create @logs as the object as well as a way to
+connect with the webserver.log. I was able to run this :
+  "ruby lib/parser.rb webserver.log" 
+    -- Did not produce any here
+
+2 'Git commit 9b1012b0cf793c149ff67c0cbfb5dc86d860ede8'
+  Created 'most visits' function
+
+  Learned that separating site name from ip address - use a regex, 
+  look at an ips length and sort it, Using map method (runs each enumerable object)
+
+
+3 'Git commit 465aa724924dcc2610a2616c3641d1ddcbee5aad'
+  Created Unique visits function
+
+  Using Ruby's .unique removes duplicates
+
+
