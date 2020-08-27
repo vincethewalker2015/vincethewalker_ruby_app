@@ -6,6 +6,13 @@ class Parser
     @logs = parse(file_path)
   end
 
+  def most_unique_views
+    @logs
+      .sort_by { |_, ips| ips.uniq.length }
+      .reverse
+      .map { |site, ips| pluralize(site, ips.uniq.length, 'unique view') }
+  end
+
   def most_visits
     @logs
       .sort_by { |_, ips| ips.length }
@@ -35,6 +42,9 @@ end
 
 parser = Parser.new(ARGV.first)
 
-  puts "\nMost visits \n\n"
+  puts "\nWebpages with most page views: \n\n"
   puts parser.most_visits
+
+  puts "\nWebpages with most unique page views \n\n"
+  puts parser.most_unique_views
 
