@@ -42,7 +42,7 @@ end
 
 parser = Parser.new(ARGV.first)
 
-  puts "\nWebpages with most page views: \n\n"
+  puts "\nWebpages with most visited: \n\n"
   puts parser.most_visits
 
   puts "\nWebpages with most unique page views \n\n"

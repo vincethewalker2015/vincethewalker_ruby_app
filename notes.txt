@@ -15,8 +15,9 @@ connect with the webserver.log. I was able to run this :
   look at an ips length and sort it, Using map method (runs each enumerable object)
 
 
-3 'Git "
+3 'Git commit 465aa724924dcc2610a2616c3641d1ddcbee5aad'
+  Created Unique visits function
 
-  Using .unique removes duplicates
+  Using Ruby's .unique removes duplicates
 
 
