@@ -1,0 +1,9 @@
+1. 'Git commit 263337c290096017aa9c78844dad12c7431e9ba2'
+Set up Pathway to pull data from webserver log
+
+Using initialize here allowed me to create @logs as the object as well as a way to
+connect with the webserver.log. I was able to run this :
+  "ruby lib/parser.rb webserver.log" 
+    -- Did not produce any here
+
+
