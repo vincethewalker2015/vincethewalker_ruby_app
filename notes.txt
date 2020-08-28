@@ -21,3 +21,6 @@ connect with the webserver.log. I was able to run this :
   Using Ruby's .unique removes duplicates
 
 
+In Testing used MiniTest
+
+

@@ -3,30 +3,35 @@ require 'minitest/reporters'
 Minitest::Reporters.use!
 
 class TestWebserver < Minitest::Test
-
-  def initialize(file_path) #Finds webserver.log
+  attr_reader :logs
+  def set_up #Finds webserver.log
     @logs = parse(file_path)
+    @ip_regex = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/
   end
   
-  # def test_a_fast_operation
-  #   pass
-  # end
+  def test_must_see_webserver_log 
+    if @logs
+      assert_response :success
+    end
+  end
 
-  # def test_a_slower_operation
-  #   sleep(0.33) && pass
-  # end
+  def test_must_find_ip_address
+     if @ip_regex
+        assert_response :success
+     end
+  end
 
-  # def test_a_really_slow_operation
-  #   sleep(1) && pass
-  # end
+  def test_must_get_unique_views
+    if @logs 
+      assert_match 'unique view'
+    end
+  end
 
-  # def test_pass
-  #   pass
-  # end
-
-  # def test_fail
-  #   pass
-  # end
+  def test_must_get_most_visits
+    if @logs
+      assert_match 'visit'
+    end
+  end
 
   private
 
@@ -40,6 +45,7 @@ class TestWebserver < Minitest::Test
       end
     end
   end
+
 
 end
 
